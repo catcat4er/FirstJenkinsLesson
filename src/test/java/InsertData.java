@@ -28,11 +28,9 @@ public class InsertData {
             pictureField = $("#uploadPicture");
 
 
-
     @Step ("Запускаем браузер с необходимым разрешением на необходимую страницу")
     public InsertData openBrowser () {
-        Configuration.browserSize = "1920x1040";
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         return this;
     }
 

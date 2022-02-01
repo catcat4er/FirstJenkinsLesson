@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-public class TestWithPageObjects {
+public class TestWithPageObjects extends TestBase {
 
     @Test
     public void firstJenkinsTest() {
