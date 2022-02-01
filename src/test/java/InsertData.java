@@ -1,8 +1,5 @@
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-
-import java.io.File;
 
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
 import static com.codeborne.selenide.Selectors.byText;
@@ -35,25 +32,24 @@ public class InsertData {
     }
 
     @Step ("назначаем все значения для всех ячеек")
-    public InsertData setAllData (String fName, String lName, String Email,String Gender, String Number, String Address,
-                                  String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
-                                  String Hobbies, String State, String City) {
+    public InsertData setAllData (String fName, String lName, String email,String gender, String number, String address,
+                                  String dayOfBirth, String monthOfBirth, String yearOfBirth, String subject,
+                                  String hobbies, String state, String city) {
         firstNameField.setValue(fName);
         lastNameField.setValue(lName);
-        userEmailField.setValue(Email);
-        genderField.$(byText(Gender)).click();
-        userNumberField.setValue(Number);
-        currentAddressField.setValue(Address);
+        userEmailField.setValue(email);
+        genderField.$(byText(gender)).click();
+        userNumberField.setValue(number);
+        currentAddressField.setValue(address);
         dateOfBirthField.click();
-        monthOfBirthField.selectOption(MonthOfBirth);
-        yearOfBirthField.selectOption(YearOfBirth);
-        String dayOfBirth = format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", DayOfBirth);
-        $(dayOfBirth).click();
-        subjectsField.setValue(Subject).pressEnter();
-        hobbiesField.$(byText(Hobbies)).click();
-        stateField.setValue(State).pressEnter();
-        cityField.setValue(City).pressEnter();
-//        pictureField.uploadFile(new File("src/test/resources/" + Pic));
+        monthOfBirthField.selectOption(monthOfBirth);
+        yearOfBirthField.selectOption(yearOfBirth);
+        String dob = format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month)", dayOfBirth);
+        $(dob).click();
+        subjectsField.setValue(subject).pressEnter();
+        hobbiesField.$(byText(hobbies)).click();
+        stateField.setValue(state).pressEnter();
+        cityField.setValue(city).pressEnter();
         return this;
     }
 
@@ -64,11 +60,11 @@ public class InsertData {
     }
 
     @Step ("Проверка правильного расположения выбранных значений")
-    public  InsertData validation (String fName, String lName, String Email,String Gender, String Number, String Address,
-                             String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
-                             String Hobbies, String State, String City) {
-        $$(".modal-content td").shouldHave(containExactTextsCaseSensitive(fName + " " + lName,Email,Gender,
-                Number,DayOfBirth + " " + MonthOfBirth + "," + YearOfBirth,Subject,Hobbies,Address,State + " " + City));
+    public  InsertData validation (String fName, String lName, String email,String gender, String number, String address,
+                             String dayOfBirth, String monthOfBirth, String yearOfBirth, String subject,
+                             String hobbies, String state, String city) {
+        $$(".modal-content td").shouldHave(containExactTextsCaseSensitive(fName + " " + lName,email,gender,
+                number,dayOfBirth + " " + monthOfBirth + "," + yearOfBirth,subject,hobbies,address,state + " " + city));
         return this;
     }
 
