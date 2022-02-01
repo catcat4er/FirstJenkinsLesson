@@ -37,7 +37,7 @@ public class InsertData {
     @Step ("назначаем все значения для всех ячеек")
     public InsertData setAllData (String fName, String lName, String Email,String Gender, String Number, String Address,
                                   String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
-                                  String Hobbies, String State, String City, String Pic) {
+                                  String Hobbies, String State, String City) {
         firstNameField.setValue(fName);
         lastNameField.setValue(lName);
         userEmailField.setValue(Email);
@@ -53,7 +53,7 @@ public class InsertData {
         hobbiesField.$(byText(Hobbies)).click();
         stateField.setValue(State).pressEnter();
         cityField.setValue(City).pressEnter();
-        pictureField.uploadFile(new File("src/test/resources/" + Pic));
+//        pictureField.uploadFile(new File("src/test/resources/" + Pic));
         return this;
     }
 
@@ -66,9 +66,9 @@ public class InsertData {
     @Step ("Проверка правильного расположения выбранных значений")
     public  InsertData validation (String fName, String lName, String Email,String Gender, String Number, String Address,
                              String DayOfBirth, String MonthOfBirth, String YearOfBirth, String Subject,
-                             String Hobbies, String State, String City, String Pic) {
+                             String Hobbies, String State, String City) {
         $$(".modal-content td").shouldHave(containExactTextsCaseSensitive(fName + " " + lName,Email,Gender,
-                Number,DayOfBirth + " " + MonthOfBirth + "," + YearOfBirth,Subject,Hobbies,Pic,Address,State + " " + City));
+                Number,DayOfBirth + " " + MonthOfBirth + "," + YearOfBirth,Subject,Hobbies,Address,State + " " + City));
         return this;
     }
 
