@@ -16,14 +16,14 @@ public class TestBase {
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         Configuration.browser = System.getProperty("browser","chrome");
         Configuration.browserVersion = System.getProperty("version","91");
-//        String user = System.getProperty("user");
-//        String password = System.getProperty("password");
-//        String url = System.getProperty("url");
-//        Configuration.remote = "https://" + user + ":" + password + "@" + url;
+        String user = System.getProperty("user");
+        String password = System.getProperty("password");
+        String url = System.getProperty("url");
+        Configuration.remote = "https://" + user + ":" + password + "@" + url;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
