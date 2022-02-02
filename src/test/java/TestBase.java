@@ -24,7 +24,7 @@ public class TestBase {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
+//        Configuration.browserCapabilities = capabilities;
 //        Configuration.remote = "https://" + user + ":" + pass + "@" + url;
 //        Configuration.browser = System.getProperty("browser","chrome");
 //        Configuration.browserVersion = System.getProperty("browserVersion","91");
