@@ -36,12 +36,9 @@ dependencies {
              'org.slf4j:slf4j-simple:1.7.33')
  }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
