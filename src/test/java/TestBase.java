@@ -19,11 +19,11 @@ public class TestBase {
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         Configuration.browser = System.getProperty("browser","chrome");
-        Configuration.browserVersion = System.getProperty("version","91");
-        String user = System.getProperty("user");
+        Configuration.browserVersion = System.getProperty("browserVersion","91");
+        String login = System.getProperty("login");
         String password = System.getProperty("password");
         String url = System.getProperty("url");
-        Configuration.remote = "https://" + user + ":" + password + "@" + url;
+        Configuration.remote = "https://" + login + ":" + password + "@" + url;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
