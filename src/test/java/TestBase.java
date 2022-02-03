@@ -22,7 +22,7 @@ public class TestBase {
 //        Configuration.browserVersion = System.getProperty("browserVersion");
         String user = System.getProperty("login");
         String password = System.getProperty("password");
-        String url = System.getProperty("url","selenoid.autotests.cloud/wd/hub");
+        String url = System.getProperty("url");
         String mainUrl = "https://" + user + ":" + password + "@" + url;
         Configuration.remote = mainUrl;
 
