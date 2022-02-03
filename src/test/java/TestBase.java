@@ -23,7 +23,8 @@ public class TestBase {
         String user = System.getProperty("user");
         String password = System.getProperty("password");
         String url = System.getProperty("url");
-        Configuration.remote = "https://" + user + ":" + password + "@" + url;
+        String mainUrl = "https://" + user + ":" + password + "@" + url;
+        Configuration.remote = mainUrl;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
