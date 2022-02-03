@@ -18,11 +18,11 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-//        Configuration.browser = System.getProperty("browser","chrome");
-//        Configuration.browserVersion = System.getProperty("browserVersion","91");
-        String user = System.getProperty("login");
-        String password = System.getProperty("password");
-        String url = System.getProperty("url");
+        Configuration.browser = System.getProperty("browser","chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion","91");
+        String user = System.getProperty("login","user1");
+        String password = System.getProperty("password","1234");
+        String url = System.getProperty("url","selenoid.autotests.cloud/wd/hub");
         String mainUrl = "https://" + user + ":" + password + "@" + url;
         Configuration.remote = mainUrl;
 
