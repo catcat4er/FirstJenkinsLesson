@@ -20,7 +20,7 @@ public class TestBase {
 
 //        Configuration.browser = System.getProperty("browser","chrome");
 //        Configuration.browserVersion = System.getProperty("browserVersion");
-        String user = System.getProperty("login");
+        String user = System.getProperty("user");
         String password = System.getProperty("password");
         String url = System.getProperty("url");
         String mainUrl = "https://" + user + ":" + password + "@" + url;
