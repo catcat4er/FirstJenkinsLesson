@@ -27,7 +27,7 @@ public class InsertData {
 
     @Step ("Запускаем браузер с необходимым разрешением на необходимую страницу")
     public InsertData openBrowser () {
-        open("automation-practice-form");
+        open("/automation-practice-form");
         return this;
     }
 
